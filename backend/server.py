@@ -1,7 +1,7 @@
 import json
 import re
 from typing import List
-from dataclasses_json import dataclass_json
+
 from ollama import chat
 from ollama import ChatResponse
 from dataclasses import dataclass
@@ -21,21 +21,6 @@ Please respond ONLY with a JSON matching exactly the following schema (no explan
 
 Make sure the JSON is valid and parsable.
 """
-
-
-""" 
-@dataclass
-@dataclass_json
-class Chapter:
-    title:str
-    description:str
-
-@dataclass
-@dataclass_json
-class Course:
-    title:str
-    chapters: List[Chapter]
- """
 
 def call_model(request: str) -> str:
     response: ChatResponse = chat(model='qwen3:0.6b', messages=[
