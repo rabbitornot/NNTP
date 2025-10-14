@@ -1,6 +1,10 @@
 from flask import Flask, render_template, request
+from server import call_model
+
+
 
 app = Flask(__name__)
+
 
 
 @app.route('/')
@@ -11,9 +15,7 @@ def home():
 def submit():
     nom = request.form.get('nom')
     if nom:
-        return f"<h2>Bonjour, {nom} !</h2><a href='/'>Retour</a>"
-    else:
-        return "<h2>Veuillez entrer un nom.</h2><a href='/'>Retour</a>"
+        return f"<h2>{"Welcome ! Here is your fully generate by IA Course !"} !</h2><a href='/'>Retour</a>"
 
 if __name__ == '__main__':
     app.run(debug=True)
